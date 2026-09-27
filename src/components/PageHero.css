@@ -1,0 +1,75 @@
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 340px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  border-radius: var(--radius-lg);
+  margin-top: var(--space-5);
+  color: var(--color-ivory);
+}
+
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/page-hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+/* Warm dark-to-transparent wash so white text stays readable over any part
+   of the photo, and it reads as one visual family with the saffron brand. */
+.page-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(20, 14, 10, 0.82) 0%,
+    rgba(20, 14, 10, 0.55) 45%,
+    rgba(20, 14, 10, 0.15) 100%
+  );
+  z-index: 0;
+}
+
+.page-hero__inner {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-8) 0 var(--space-7);
+  max-width: 620px;
+}
+
+.page-hero--center .page-hero__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-hero__eyebrow {
+  color: var(--color-antique-gold);
+}
+
+.page-hero__title {
+  margin-top: var(--space-2);
+  color: var(--color-ivory);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.1;
+}
+
+.page-hero__subtitle {
+  margin-top: var(--space-3);
+  color: rgba(255, 248, 231, 0.85);
+  font-size: var(--step-0);
+  max-width: 46ch;
+}
+
+@media (max-width: 640px) {
+  .page-hero {
+    min-height: 260px;
+    border-radius: var(--radius-md);
+  }
+  .page-hero__inner {
+    padding: var(--space-6) 0 var(--space-5);
+  }
+}

@@ -1,20 +1,17 @@
-import { GAMES } from '../../data/games.js'
+ import { GAMES } from '../../data/games.js'
 import GameCard from '../../components/play/GameCard.jsx'
+import PageHero from '../../components/PageHero.jsx'
 import './Play.css'
 
 export default function Play() {
   return (
     <section className="play-hub">
+      <PageHero
+        eyebrow="Play the Past"
+        title="Board Games, Rebuilt from the Ground Up"
+        subtitle="Play the same games archaeologists found buried at Harappa and Mohenjo-daro."
+      />
       <div className="container">
-        <p className="eyebrow">HeritagePlay Collection</p>
-        <h1>
-          Choose your <span className="play-hub__accent">game.</span>
-        </h1>
-        <p className="play-hub__lede">
-          Step into India's past and experience historically inspired games
-          through a modern interactive platform.
-        </p>
-
         <div className="play-hub__grid">
           {GAMES.map((game) => (
             <GameCard key={game.id} game={game} />

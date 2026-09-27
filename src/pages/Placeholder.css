@@ -1,7 +1,15 @@
-.placeholder {
+/* .placeholder {
   min-height: calc(100vh - var(--nav-height) - 200px);
   display: flex;
   align-items: center;
+} */
+ .placeholder {
+  display: block;
+  min-height: 70vh;
+}
+
+.placeholder__inner {
+  padding-top: var(--space-6);
 }
 
 .placeholder__inner {

@@ -8,7 +8,7 @@ const NAV_ITEMS = [
   { label: 'Explore Heritage', to: '/explore' },
   { label: 'Archaeological Detective', to: '/detective' },
   { label: 'Play the Past', to: '/play' },
-  { label: 'Game Evolution', to: '/evolution' },
+  { label: 'Ancient Toy Maker', to: '/toy-maker' },
   { label: 'Heritage Map', to: '/map' },
   { label: 'Stories & Learning', to: '/stories' },
 ]

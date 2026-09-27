@@ -1,6 +1,9 @@
+// 
+
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { HERITAGE_SITES } from '../../data/heritageSites.js'
+import PageHero from '../../components/PageHero.jsx'
 import './HeritageMap.css'
 
 const ZOOM_MIN = 1
@@ -34,20 +37,13 @@ export default function HeritageMap() {
 
   return (
     <section className="heritage-map">
-      <div className="container">
-        <header className="heritage-map__header">
-          <p className="eyebrow">Heritage Map</p>
-          <h1>
-            Explore Ancient
-            <br />
-            Civilizations of <span className="heritage-map__accent">India</span>
-          </h1>
-          <p className="heritage-map__lede">
-            Discover archaeological sites, ancient games, artifacts and
-            stories from across the country.
-          </p>
-        </header>
+      <PageHero
+        eyebrow="Heritage Map"
+        title={<>Explore Ancient Civilizations of <span className="heritage-map__accent">India</span></>}
+        subtitle="Discover archaeological sites, ancient games, artifacts and stories from across the country."
+      />
 
+      <div className="container">
         <div className="heritage-map__layout">
           <aside className="heritage-map__sidebar">
             <div className="heritage-map__search">

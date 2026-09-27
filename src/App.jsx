@@ -11,25 +11,14 @@ import ComparePage from './pages/compare/ComparePage.jsx'
 import Play from './pages/play/Play.jsx'
 import Stories from './pages/stories/Stories.jsx'
 import HeritageMap from './pages/heritagemap/HeritageMap.jsx'
+import ToyMaker from './pages/toymaker/ToyMaker.jsx'
+import ExploreHeritage from './pages/explore/ExploreHeritage.jsx'
+
+
 
 const COMING_SOON = [
-  { path: '/explore', title: 'Explore Heritage', phase: 'Phase 6', body: "..." },
-  { path: '/evolution', title: 'Game Evolution', phase: 'Phase 7', body: '...' },
-  // { path: '/map', title: 'Heritage Map', phase: 'Phase 8', body: '...' },
-]
-// import ComparePage from './pages/compare/ComparePage.jsx'
-// import Play from './pages/play/Play.jsx'
 
-// // Every route below Home (other than the Archaeological Detective, built in
-// // Phase 2, and Play the Past, merged from the HeritagePlay-main prototype)
-// // is a Phase-1 stand-in. Each becomes a real page in its numbered phase
-// // (see README.md).
-// const COMING_SOON = [
-//   { path: '/explore', title: 'Explore Heritage', phase: 'Phase 6', body: "A small, walkable Harappan settlement where you'll inspect real artifact records — name, period, material, evidence, and sources." },
-//   { path: '/evolution', title: 'Game Evolution', phase: 'Phase 7', body: 'An interactive timeline tracing how games like Chaturanga evolved across regions and centuries.' },
-//   { path: '/map', title: 'Heritage Map', phase: 'Phase 8', body: 'An interactive map of India surfacing heritage games and toys by region and period.' },
-//   { path: '/stories', title: 'Stories & Learning', phase: 'Phase 9', body: 'Short, visual stories about artifacts, games, and the archaeology behind them.' },
-// ]
+]
 
 export default function App() {
   return (
@@ -46,6 +35,8 @@ export default function App() {
           <Route path="/play" element={<Play />} />
           <Route path="/stories" element={<Stories />} />
           <Route path="/map" element={<HeritageMap />} />
+          <Route path="/toy-maker" element={<ToyMaker />} />
+          <Route path="/explore" element={<ExploreHeritage />} />
           {COMING_SOON.map((route) => (
             <Route
               key={route.path}

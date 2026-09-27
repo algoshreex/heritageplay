@@ -128,4 +128,26 @@
 @media (max-width: 560px) {
   .evidence-card__header { align-items: flex-start; }
   .evidence-card__right { flex-direction: column; align-items: flex-end; gap: var(--space-2); }
+} 
+
+.evidence-card__image {
+  width: 100%;
+  height: 260px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #eee4d2;
+  border: 1px solid #e5d8c3;
 }
+
+.evidence-card__image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.evidence-card__image:hover img {
+  transform: scale(1.04);
+} 

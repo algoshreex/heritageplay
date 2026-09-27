@@ -1,0 +1,237 @@
+/* ---- Hero ---- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  /* padding: var(--space-9) 0 var(--space-8); */
+  min-height: 640px;
+  /* display: flex;  */
+  align-items: center;
+}
+
+.hero-v{
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+/* Sits above the video (and StrataField) but below hero__inner's text/cards,
+   so the heading stays readable over the clip. Lower the opacity (or delete
+   this rule + the <div className="hero__overlay-wash" /> in Home.jsx) if you
+   want the footage to show through more strongly. */
+.hero__overlay-wash {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--color-ivory);
+  opacity: 0.55;
+}
+
+.hero__heading {
+  margin-top: var(--space-4);
+  letter-spacing: -0.01em;
+}
+
+.hero__sub {
+  margin-top: var(--space-5);
+  font-size: var(--step-1);
+  color: var(--color-charcoal-soft);
+  max-width: 56ch;
+}
+
+.hero__actions {
+  margin-top: var(--space-7);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.hero__action {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 260px;
+  padding: var(--space-5);
+  background: var(--color-ivory);
+  border: 1.5px solid var(--color-hairline-strong);
+  border-radius: var(--radius-md);
+  border-left-width: 4px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hero__action:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-raised);
+}
+
+.hero__action-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.hero__action-body {
+  font-size: var(--step--1);
+  color: var(--color-charcoal-soft);
+}
+
+.hero__action--saffron { border-left-color: var(--color-saffron); }
+.hero__action--royal-blue { border-left-color: var(--color-royal-blue); }
+.hero__action--heritage-green { border-left-color: var(--color-heritage-green); }
+
+/* ---- Artifact strip divider ---- */
+.artifact-strip {
+  background: var(--color-royal-blue);
+  padding: var(--space-5) 0;
+}
+
+.artifact-strip__inner {
+  display: flex;
+  justify-content: center;
+  gap: clamp(var(--space-6), 8vw, var(--space-9));
+  color: var(--color-ivory);
+  opacity: 0.85;
+}
+
+.artifact-strip__icon {
+  width: clamp(22px, 3vw, 30px);
+  height: clamp(22px, 3vw, 30px);
+}
+
+/* ---- Generic section rhythm ---- */
+.section {
+  padding: var(--space-8) 0;
+}
+
+.section__heading {
+  margin-top: var(--space-3);
+  max-width: 22ch;
+}
+
+.section__lede {
+  margin-top: var(--space-4);
+  font-size: var(--step-0);
+  color: var(--color-charcoal-soft);
+  max-width: 62ch;
+}
+
+/* ---- Journey grid ---- */
+.journey-grid {
+  margin-top: var(--space-7);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.journey-card {
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  background: var(--color-ivory);
+  border: 1px solid var(--color-hairline);
+  border-top-width: 3px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.journey-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+.journey-card h3 { font-size: 1.15rem; }
+
+.journey-card p {
+  margin-top: var(--space-2);
+  color: var(--color-charcoal-soft);
+  font-size: var(--step--1);
+}
+
+.journey-card--saffron { border-top-color: var(--color-saffron); }
+.journey-card--royal-blue { border-top-color: var(--color-royal-blue); }
+.journey-card--heritage-green { border-top-color: var(--color-heritage-green); }
+.journey-card--peacock { border-top-color: var(--color-peacock); }
+.journey-card--rani-pink { border-top-color: var(--color-rani-pink); }
+.journey-card--royal-purple { border-top-color: var(--color-royal-purple); }
+
+/* ---- Demo video ---- */
+.section--demo {
+  background: var(--color-ivory-deep);
+  border-top: 1px solid var(--color-hairline);
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.demo-video {
+  margin-top: var(--space-6);
+  max-width: 860px;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-raised);
+  overflow: hidden;
+  background: var(--color-charcoal);
+}
+
+.demo-video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ---- Evidence philosophy band ---- */
+.section--evidence {
+  background: var(--color-ivory-deep);
+  border-top: 1px solid var(--color-hairline);
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.evidence-band {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+.evidence-band__legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--color-charcoal-soft);
+}
+
+.evidence-band__legend li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot--high { background: var(--color-evidence-high); }
+.dot--medium { background: var(--color-evidence-medium); }
+.dot--low { background: var(--color-evidence-low); }
+
+/* ---- Responsive ---- */
+@media (max-width: 980px) {
+  .journey-grid { grid-template-columns: repeat(2, 1fr); }
+  .evidence-band { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .hero { padding: var(--space-8) 0 var(--space-7); min-height: 0; }
+  .hero__action { width: 100%; }
+  .journey-grid { grid-template-columns: 1fr; }
+  .artifact-strip__inner { gap: var(--space-6); }
+}

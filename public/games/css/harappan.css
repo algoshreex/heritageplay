@@ -1,0 +1,852 @@
+/* =========================
+   HARAPPAN DICE
+========================= */
+
+.harappan-page {
+
+    min-height: 100vh;
+
+    padding: 70px 7% 100px;
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            #e4ceb0 0%,
+            transparent 25%
+        ),
+
+        #f3eadc;
+
+}
+
+
+/* HEADER */
+
+.harappan-header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 50px;
+
+}
+
+
+.harappan-header h1 {
+
+    margin-top: 12px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(48px, 6vw, 70px);
+
+    color: #302219;
+
+}
+
+
+.harappan-header h1 span {
+
+    color: #a0522d;
+
+    font-style: italic;
+
+}
+
+
+.harappan-header p {
+
+    max-width: 650px;
+
+    margin-top: 12px;
+
+    color: #6e5b47;
+
+    line-height: 1.8;
+
+}
+
+
+.harappan-badge {
+
+    padding: 12px 18px;
+
+    border: 1px solid #c8af8d;
+
+    border-radius: 30px;
+
+    background: #e9dbc5;
+
+    color: #80502d;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================
+   GAME
+========================= */
+
+.dice-game {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1.3fr
+        1fr;
+
+    gap: 20px;
+
+    align-items: stretch;
+
+}
+
+
+/* CONTESTANTS */
+
+.contestant {
+
+    padding: 30px;
+
+    border: 1px solid #d4c0a2;
+
+    border-radius: 18px;
+
+    background: #ede0cc;
+
+}
+
+
+.player-side {
+
+    border-top: 4px solid #a0522d;
+
+}
+
+
+.ai-side {
+
+    border-top: 4px solid #44585d;
+
+}
+
+
+.contestant-top {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.avatar {
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #d8bea0;
+
+    font-size: 25px;
+
+}
+
+
+.avatar.ai {
+
+    background: #c9d0cf;
+
+}
+
+
+.contestant-top span {
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #846c53;
+
+}
+
+
+.contestant h2 {
+
+    margin-top: 4px;
+
+    font-family: "Cinzel", serif;
+
+    color: #3a291c;
+
+}
+
+
+/* SCORE */
+
+.score {
+
+    margin-top: 45px;
+
+}
+
+
+.score span {
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #846c53;
+
+}
+
+
+.score strong {
+
+    display: block;
+
+    margin-top: 5px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 58px;
+
+    color: #a0522d;
+
+}
+
+
+/* PROGRESS */
+
+.progress {
+
+    height: 8px;
+
+    margin-top: 20px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #d4c4ac;
+
+}
+
+
+.progress-fill {
+
+    height: 100%;
+
+    width: 0%;
+
+    border-radius: 10px;
+
+    background: #a0522d;
+
+    transition: width 0.5s;
+
+}
+
+
+/* =========================
+   CENTER DICE
+========================= */
+
+.dice-center {
+
+    min-height: 370px;
+
+    padding: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    background: #2d2118;
+
+    box-shadow:
+        0 20px 45px
+        rgba(45, 30, 15, 0.2);
+
+}
+
+
+.round-label {
+
+    color: #c9ad83;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.round-label strong {
+
+    margin-left: 5px;
+
+    color: #f3dfc0;
+
+}
+
+
+.ancient-dice-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    margin: 25px 0;
+
+}
+
+
+.ancient-dice {
+
+    width: 100px;
+
+    height: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f0dfbd,
+            #cdb486
+        );
+
+    color: #52351f;
+
+    font-size: 55px;
+
+    box-shadow:
+        0 12px 25px
+        rgba(0,0,0,0.35);
+
+}
+
+
+.ai-dice {
+
+    background:
+        linear-gradient(
+            145deg,
+            #d6dddd,
+            #9daaaa
+        );
+
+    color: #35474b;
+
+}
+
+
+.vs {
+
+    color: #b08b5e;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 14px;
+
+}
+
+
+.dice-center > p {
+
+    color: #cbbba5;
+
+    font-size: 11px;
+
+}
+
+
+.harappan-roll {
+
+    margin-top: 20px;
+
+    padding: 14px 30px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #a0522d;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+}
+
+
+.harappan-roll:hover {
+
+    background: #b7663c;
+
+    transform: translateY(-2px);
+
+}
+
+
+.harappan-roll:disabled {
+
+    opacity: 0.4;
+
+    cursor: not-allowed;
+
+}
+
+
+.next-round {
+
+    display: none;
+
+    margin-top: 12px;
+
+    padding: 10px 22px;
+
+    border: 1px solid #a78963;
+
+    border-radius: 25px;
+
+    background: transparent;
+
+    color: #dbc8aa;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.harappan-status {
+
+    margin-top: 25px;
+
+    padding: 22px 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    border: 1px solid #d3bea0;
+
+    border-radius: 14px;
+
+    background: #eee2cf;
+
+}
+
+
+.status-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dcc7a6;
+
+    color: #a0522d;
+
+}
+
+
+.harappan-status span {
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #876e55;
+
+}
+
+
+.harappan-status p {
+
+    margin-top: 5px;
+
+    color: #554534;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================
+   HISTORY
+========================= */
+
+.harappan-history {
+
+    margin-top: 80px;
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 0.7fr;
+
+    gap: 50px;
+
+    align-items: center;
+
+}
+
+
+.history-content h2 {
+
+    margin-top: 12px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 38px;
+
+    color: #322419;
+
+}
+
+
+.history-content h2 span {
+
+    color: #a0522d;
+
+}
+
+
+.history-content p {
+
+    max-width: 720px;
+
+    margin-top: 18px;
+
+    color: #6c5a47;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+}
+
+
+/* ARTIFACT */
+
+.artifact-card {
+
+    min-height: 250px;
+
+    padding: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    border: 1px solid #cdb796;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #c6a477,
+            #96704a
+        );
+
+    color: #fff1d9;
+
+}
+
+
+.artifact-symbol {
+
+    font-size: 55px;
+
+    margin-bottom: 20px;
+
+    opacity: 0.7;
+
+}
+
+
+.artifact-card > span {
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.artifact-card h3 {
+
+    margin-top: 8px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 23px;
+
+}
+
+
+.artifact-card p {
+
+    margin-top: 10px;
+
+    color: #ead9bd;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================
+   RULES
+========================= */
+
+.harappan-rules {
+
+    margin-top: 80px;
+
+}
+
+
+.harappan-rules h2 {
+
+    margin-top: 12px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 38px;
+
+    color: #33251a;
+
+}
+
+
+.harappan-rules h2 span {
+
+    color: #a0522d;
+
+}
+
+
+.harappan-rule-grid {
+
+    margin-top: 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.harappan-rule {
+
+    padding: 25px;
+
+    border: 1px solid #d4c2a4;
+
+    border-radius: 13px;
+
+    background: #eee3d1;
+
+}
+
+
+.harappan-rule strong {
+
+    color: #a0522d;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 20px;
+
+}
+
+
+.harappan-rule h3 {
+
+    margin-top: 12px;
+
+    font-family: "Cinzel", serif;
+
+    color: #3b2a1c;
+
+}
+
+
+.harappan-rule p {
+
+    margin-top: 8px;
+
+    color: #75634f;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 950px) {
+
+    .dice-game {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .dice-center {
+
+        order: -1;
+
+    }
+
+    .harappan-history {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .harappan-rule-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .harappan-page {
+
+        padding: 50px 5%;
+
+    }
+
+    .harappan-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+    .ancient-dice {
+
+        width: 75px;
+
+        height: 75px;
+
+        font-size: 40px;
+
+    }
+
+    .harappan-rule-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+} 
+
+.reset-harappan {
+
+    margin-top: 10px;
+
+    padding: 9px 20px;
+
+    border: 1px solid #80694d;
+
+    border-radius: 25px;
+
+    background: transparent;
+
+    color: #cbbba5;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+}
+
+.reset-harappan:hover {
+
+    background: #463528;
+
+} 

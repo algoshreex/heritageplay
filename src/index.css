@@ -1,0 +1,147 @@
+/* ==========================================================================
+   HeritagePlay — Design System
+   Phase 1: Foundation
+   ========================================================================== */
+
+:root {
+  /* ---- Color: Heritage palette (from spec) ---- */
+  --color-saffron: #FF6B00;
+  --color-royal-blue: #123C73;
+  --color-heritage-green: #138A5B;
+  --color-peacock: #008C95;
+  --color-rani-pink: #C2185B;
+  --color-royal-purple: #6A1B9A;
+  --color-antique-gold: #D4A017;
+  --color-ivory: #FFF8E7;
+  --color-charcoal: #211A17;
+
+  /* Tints/shades derived for surfaces, borders, hover states */
+  --color-ivory-deep: #FBF1DC;
+  --color-charcoal-soft: #4A3F38;
+  --color-charcoal-faint: #857A72;
+  --color-hairline: rgba(33, 26, 23, 0.12);
+  --color-hairline-strong: rgba(33, 26, 23, 0.22);
+
+  /* Semantic evidence-status colors (used across the whole app, not just detective module) */
+  --color-evidence-high: var(--color-heritage-green);
+  --color-evidence-medium: var(--color-antique-gold);
+  --color-evidence-low: #B23A2E;
+
+  /* ---- Typography ---- */
+  --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --step--1: clamp(0.8rem, 0.78rem + 0.1vw, 0.875rem);
+  --step-0:  clamp(1rem, 0.97rem + 0.15vw, 1.125rem);
+  --step-1:  clamp(1.2rem, 1.13rem + 0.35vw, 1.5rem);
+  --step-2:  clamp(1.5rem, 1.35rem + 0.75vw, 2.0625rem);
+  --step-3:  clamp(1.9rem, 1.6rem + 1.5vw, 2.75rem);
+  --step-4:  clamp(2.4rem, 1.9rem + 2.5vw, 3.75rem);
+  --step-5:  clamp(3rem, 2.2rem + 4vw, 4.75rem);
+
+  /* ---- Spacing scale (8px base) ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 6.5rem;
+
+  /* ---- Radius & shadow (kept restrained — no glassmorphism, no heavy gradients) ---- */
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --shadow-card: 0 1px 2px rgba(33, 26, 23, 0.06), 0 8px 24px -12px rgba(33, 26, 23, 0.18);
+  --shadow-raised: 0 2px 4px rgba(33, 26, 23, 0.08), 0 16px 32px -16px rgba(33, 26, 23, 0.28);
+
+  /* ---- Layout ---- */
+  --content-max: 1180px;
+  --nav-height: 76px;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--color-ivory);
+  color: var(--color-charcoal);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--color-charcoal);
+  line-height: 1.08;
+  margin: 0;
+  font-weight: 600;
+}
+
+h1 { font-size: var(--step-5); font-weight: 600; }
+h2 { font-size: var(--step-3); font-weight: 600; }
+h3 { font-size: var(--step-2); font-weight: 600; }
+h4 { font-size: var(--step-1); font-weight: 600; }
+
+p { margin: 0; }
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+ul, ol { margin: 0; padding: 0; list-style: none; }
+
+/* ---- Utility ---- */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--step--1);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-charcoal-faint);
+}
+
+.container {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+@media (max-width: 640px) {
+  .container { padding: 0 var(--space-5); }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Visible keyboard focus everywhere — accessibility requirement */
+:focus-visible {
+  outline: 3px solid var(--color-peacock);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

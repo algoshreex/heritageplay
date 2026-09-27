@@ -1,0 +1,36 @@
+.score-compare {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  padding: var(--space-5) 0;
+}
+
+.score-compare__block {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.score-compare__title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-charcoal-faint);
+}
+
+.score-compare__band {
+  margin-top: 2px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.score-compare__divider {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-charcoal-faint);
+  font-size: 1.1rem;
+}

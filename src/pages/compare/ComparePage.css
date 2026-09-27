@@ -1,0 +1,85 @@
+.compare-page {
+  padding: var(--space-7) 0 var(--space-9);
+}
+
+.compare-page__back {
+  display: inline-block;
+  font-weight: 700;
+  font-size: var(--step--1);
+  color: var(--color-royal-blue);
+  margin-bottom: var(--space-5);
+}
+
+.compare-page h1 {
+  margin-top: var(--space-2);
+  max-width: 32ch;
+}
+
+.compare-page__lede {
+  margin-top: var(--space-3);
+  color: var(--color-charcoal-soft);
+  max-width: 72ch;
+}
+
+.compare-page__scores {
+  margin-top: var(--space-7);
+  padding: var(--space-6);
+  background: var(--color-ivory-deep);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+}
+
+.compare-page__table-heading {
+  margin-top: var(--space-8);
+  font-size: 1.3rem;
+}
+
+.compare-page__table-heading + .compare-table {
+  margin-top: var(--space-5);
+}
+
+.compare-page__closing {
+  margin-top: var(--space-7);
+  padding: var(--space-6);
+  background: rgba(106, 27, 154, 0.06);
+  border-left: 3px solid var(--color-royal-purple);
+  border-radius: var(--radius-sm);
+}
+
+.compare-page__closing p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--color-charcoal);
+  max-width: 66ch;
+}
+
+.compare-page__actions {
+  margin-top: var(--space-7);
+  display: flex;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.compare-page__secondary {
+  font-weight: 700;
+  font-size: var(--step--1);
+  color: var(--color-royal-blue);
+}
+
+.compare-page__guard {
+  max-width: 640px;
+}
+
+.compare-page__guard h1 { margin-top: var(--space-2); }
+.compare-page__guard p { margin-top: var(--space-4); color: var(--color-charcoal-soft); }
+
+.compare-page__cta {
+  display: inline-block;
+  margin-top: var(--space-6);
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-royal-blue);
+  color: var(--color-ivory);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+}

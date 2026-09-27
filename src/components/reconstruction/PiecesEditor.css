@@ -1,0 +1,61 @@
+.pieces-editor__stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-ivory-deep);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-hairline);
+}
+
+.pieces-editor__stepper-label {
+  font-weight: 700;
+  font-size: var(--step--1);
+}
+
+.pieces-editor__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.pieces-editor__btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-hairline-strong);
+  background: var(--color-ivory);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  line-height: 1;
+}
+
+.pieces-editor__btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pieces-editor__count {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  min-width: 1.5ch;
+  text-align: center;
+}
+
+.pieces-editor__rack {
+  margin-top: var(--space-5);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: var(--space-4);
+}
+
+.pieces-editor__token {
+  color: var(--color-saffron);
+}
+
+.pieces-editor__rack + .hypothesis-field {
+  margin-top: var(--space-5);
+}

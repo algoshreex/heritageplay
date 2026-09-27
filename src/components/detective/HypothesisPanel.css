@@ -1,0 +1,103 @@
+.hypothesis-panel {
+  padding: var(--space-6);
+  background: var(--color-ivory);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+}
+
+.hypothesis-panel__heading {
+  margin-top: var(--space-2);
+}
+
+.hypothesis-panel__lede {
+  margin-top: var(--space-3);
+  color: var(--color-charcoal-soft);
+  max-width: 60ch;
+}
+
+.hypothesis-panel__locked {
+  margin-top: var(--space-5);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-ivory-deep);
+  border: 1px dashed var(--color-hairline-strong);
+  border-radius: var(--radius-md);
+  color: var(--color-charcoal-soft);
+  font-size: var(--step--1);
+}
+
+.hypothesis-panel__fields {
+  margin-top: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.hypothesis-field {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hypothesis-field legend {
+  padding: 0;
+  font-weight: 700;
+  font-size: var(--step--1);
+  color: var(--color-charcoal);
+  margin-bottom: var(--space-3);
+}
+
+.hypothesis-field__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.hypothesis-field__option {
+  padding: var(--space-2) var(--space-4);
+  border-radius: 999px;
+  border: 1.5px solid var(--color-hairline-strong);
+  background: var(--color-ivory);
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--color-charcoal-soft);
+  transition: all 0.15s ease;
+}
+
+.hypothesis-field__option:hover {
+  border-color: var(--color-royal-blue);
+  color: var(--color-charcoal);
+}
+
+.hypothesis-field__option--selected {
+  background: var(--color-royal-blue);
+  border-color: var(--color-royal-blue);
+  color: var(--color-ivory);
+}
+
+.hypothesis-panel__submit {
+  margin-top: var(--space-6);
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-saffron);
+  color: var(--color-ivory);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: var(--step-0);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.hypothesis-panel__submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-card);
+}
+
+.hypothesis-panel__submit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.hypothesis-panel__hint {
+  margin-top: var(--space-3);
+  font-size: var(--step--1);
+  color: var(--color-charcoal-faint);
+}

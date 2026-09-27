@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>HeritagePlay | Harappan Dice</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/harappan.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <span class="logo-symbol">✦</span>
+
+        <span>
+            Heritage<span>Play</span>
+        </span>
+
+    </div>
+
+
+    <nav>
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/play"
+           class="active">
+            Games
+        </a>
+
+        <a href="/">
+            About
+        </a>
+
+    </nav>
+
+
+    <button class="nav-button"
+            onclick="window.location.href='/play'">
+
+        ← Games
+
+    </button>
+
+</header>
+
+
+
+<!-- MAIN GAME -->
+
+<main class="harappan-page">
+
+
+    <!-- HEADER -->
+
+    <section class="harappan-header">
+
+        <div>
+
+            <span class="small-title">
+                INDUS VALLEY CIVILIZATION
+            </span>
+
+
+            <h1>
+                Harappan
+                <span>Dice</span>
+            </h1>
+
+
+            <p>
+                A historically inspired dice challenge
+                drawing visual inspiration from gaming
+                artifacts associated with the Harappan world.
+            </p>
+
+        </div>
+
+
+        <div class="harappan-badge">
+
+            🏺 HARAPPAN HERITAGE
+
+        </div>
+
+    </section>
+
+
+
+    <!-- GAME -->
+
+    <section class="dice-game">
+
+
+        <!-- PLAYER -->
+
+        <div class="contestant player-side">
+
+            <div class="contestant-top">
+
+                <div class="avatar">
+                    👤
+                </div>
+
+                <div>
+
+                    <span>
+                        PLAYER 1
+                    </span>
+
+                    <h2>
+                        You
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="score">
+
+                <span>
+                    SCORE
+                </span>
+
+                <strong id="playerScore">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="progress">
+
+                <div
+                    id="playerProgress"
+                    class="progress-fill">
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CENTER -->
+
+        <div class="dice-center">
+
+
+            <div class="round-label">
+
+                ROUND
+
+                <strong id="roundNumber">
+                    1
+                </strong>
+
+            </div>
+
+
+            <div class="ancient-dice-area">
+
+
+                <div
+                    id="playerDice"
+                    class="ancient-dice">
+
+                    ⚄
+
+                </div>
+
+
+                <div class="vs">
+                    VS
+                </div>
+
+
+                <div
+                    id="aiDice"
+                    class="ancient-dice ai-dice">
+
+                    ⚂
+
+                </div>
+
+            </div>
+
+
+            <p id="diceMessage">
+
+                Your turn — roll the dice.
+
+            </p>
+
+
+            <button
+                id="rollDiceButton"
+                class="harappan-roll"
+                onclick="rollHarappanDice()">
+
+                🎲 Roll Dice
+
+            </button>
+
+
+            <button
+                id="nextRoundButton"
+                class="next-round"
+                onclick="nextRound()">
+
+                Next Round →
+
+            </button> 
+            <button
+    class="reset-harappan"
+    onclick="resetHarappanGame()">
+
+    ↻ Restart Game
+
+</button> 
+
+
+        </div>
+
+
+
+        <!-- AI -->
+
+        <div class="contestant ai-side">
+
+            <div class="contestant-top">
+
+                <div class="avatar ai">
+
+                    🤖
+
+                </div>
+
+                <div>
+
+                    <span>
+                        PLAYER 2
+                    </span>
+
+                    <h2>
+                        Heritage AI
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="score">
+
+                <span>
+                    SCORE
+                </span>
+
+                <strong id="aiScore">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="progress">
+
+                <div
+                    id="aiProgress"
+                    class="progress-fill">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- STATUS -->
+
+    <section class="harappan-status">
+
+        <div class="status-icon">
+            ✦
+        </div>
+
+        <div>
+
+            <span>
+                GAME STATUS
+            </span>
+
+            <p id="gameStatus">
+
+                Roll the dice to begin the challenge.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- HISTORICAL CONTEXT -->
+
+    <section class="harappan-history">
+
+
+        <div class="history-content">
+
+            <span class="small-title">
+                THE HISTORICAL CONNECTION
+            </span>
+
+
+            <h2>
+                Games in the
+                <span>Harappan World</span>
+            </h2>
+
+
+            <p>
+
+                Archaeological discoveries from sites associated
+                with the Indus Valley Civilization include objects
+                interpreted as gaming pieces and dice. These
+                artifacts provide evidence that play and games
+                formed part of ancient life.
+
+            </p>
+
+
+            <p>
+
+                HeritagePlay transforms this archaeological
+                inspiration into an accessible digital experience.
+                The exact rules of many ancient games are not
+                completely known, so this prototype presents a
+                modern interpretation rather than claiming to
+                reproduce a confirmed historical rule set.
+
+            </p>
+
+        </div>
+
+
+        <div class="artifact-card">
+
+            <div class="artifact-symbol">
+                ◈
+            </div>
+
+            <span>
+                HERITAGE ARTIFACT
+            </span>
+
+            <h3>
+                Dice & Gaming Objects
+            </h3>
+
+            <p>
+                Inspired by archaeological evidence
+                from the Indus Valley Civilization.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- RULES -->
+
+    <section class="harappan-rules">
+
+        <div class="small-title">
+            HOW TO PLAY
+        </div>
+
+
+        <h2>
+            Simple to learn.
+            <span>Fun to play.</span>
+        </h2>
+
+
+        <div class="harappan-rule-grid">
+
+
+            <div class="harappan-rule">
+
+                <strong>
+                    01
+                </strong>
+
+                <h3>
+                    Roll
+                </h3>
+
+                <p>
+                    Roll your virtual dice
+                    to determine your score.
+                </p>
+
+            </div>
+
+
+            <div class="harappan-rule">
+
+                <strong>
+                    02
+                </strong>
+
+                <h3>
+                    Compare
+                </h3>
+
+                <p>
+                    Your result is compared
+                    with the Heritage AI.
+                </p>
+
+            </div>
+
+
+            <div class="harappan-rule">
+
+                <strong>
+                    03
+                </strong>
+
+                <h3>
+                    Score
+                </h3>
+
+                <p>
+                    The player with the higher
+                    roll earns the round points.
+                </p>
+
+            </div>
+
+
+            <div class="harappan-rule">
+
+                <strong>
+                    04
+                </strong>
+
+                <h3>
+                    Win
+                </h3>
+
+                <p>
+                    Reach 30 points before
+                    your opponent.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    <div class="footer-logo">
+        HeritagePlay
+    </div>
+
+    <p>
+        Preserving Heritage. Reimagining Play.
+    </p>
+
+    <span>
+        © 2026 HeritagePlay • SIH 2026 Prototype
+    </span>
+
+</footer> 
+
+
+<!-- GAME RESULT MODAL -->
+
+<div id="resultModal" class="result-modal">
+
+    <div class="result-box">
+
+        <button
+            class="close-result"
+            onclick="closeResultModal()">
+            ×
+        </button>
+
+        <div id="resultIcon" class="result-icon">
+            🏆
+        </div>
+
+        <span class="result-label">
+            GAME COMPLETE
+        </span>
+
+        <h2 id="resultTitle">
+            Victory!
+        </h2>
+
+        <p id="resultMessage">
+            Excellent strategy!
+        </p>
+
+        <div class="history-fact">
+
+            <span>
+                🏺 HERITAGE FACT
+            </span>
+
+            <p id="resultFact">
+
+    Archaeological discoveries associated
+    with the Indus Valley Civilization include
+    dice and gaming objects, showing that
+    gaming was part of ancient life.
+
+</p>  
+
+        </div>
+
+        <div class="result-buttons">
+
+            <button
+                class="play-again"
+                onclick="resetGame(); closeResultModal();">
+
+                ↻ Play Again
+
+            </button>
+
+            <button
+                class="back-games"
+                onclick="window.location.href='/play'">
+
+                ← Back to Games
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div> 
+
+
+
+<script src="js/harappan.js"></script>
+
+</body>
+
+</html> 

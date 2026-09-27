@@ -1,0 +1,33 @@
+.detective-list {
+  padding: var(--space-8) 0 var(--space-9);
+}
+
+.detective-list h1 {
+  margin-top: var(--space-2);
+  max-width: 20ch;
+}
+
+.detective-list__lede {
+  margin-top: var(--space-4);
+  color: var(--color-charcoal-soft);
+  max-width: 66ch;
+  font-size: var(--step-0);
+}
+
+.detective-list__notice {
+  margin-top: var(--space-5);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-ivory-deep);
+  border-left: 3px solid var(--color-antique-gold);
+  border-radius: var(--radius-sm);
+  font-size: var(--step--1);
+  color: var(--color-charcoal-soft);
+  max-width: 66ch;
+}
+
+.detective-list__grid {
+  margin-top: var(--space-7);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-5);
+}

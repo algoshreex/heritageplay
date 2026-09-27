@@ -1,0 +1,26 @@
+.placeholder {
+  min-height: calc(100vh - var(--nav-height) - 200px);
+  display: flex;
+  align-items: center;
+}
+
+.placeholder__inner {
+  max-width: 640px;
+}
+
+.placeholder h1 {
+  margin-top: var(--space-3);
+}
+
+.placeholder__body {
+  margin-top: var(--space-4);
+  color: var(--color-charcoal-soft);
+  font-size: var(--step-1);
+}
+
+.placeholder__back {
+  display: inline-block;
+  margin-top: var(--space-6);
+  font-weight: 700;
+  color: var(--color-saffron);
+}

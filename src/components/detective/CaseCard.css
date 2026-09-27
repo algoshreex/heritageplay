@@ -1,0 +1,107 @@
+.case-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  background: var(--color-ivory);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.case-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.case-card__number {
+  font-size: var(--step--1);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--color-royal-blue);
+}
+
+.case-card__prototype {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-charcoal-faint);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: 999px;
+  padding: 2px var(--space-3);
+}
+
+.case-card__title {
+  font-size: 1.4rem;
+}
+
+.case-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--color-hairline);
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.case-card__meta dt {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-charcoal-faint);
+}
+
+.case-card__meta dd {
+  margin: 2px 0 0;
+  font-size: var(--step--1);
+  color: var(--color-charcoal-soft);
+}
+
+.case-card__summary {
+  color: var(--color-charcoal-soft);
+  flex-grow: 1;
+}
+
+.case-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.case-card__stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: var(--step--1);
+  color: var(--color-charcoal-faint);
+}
+
+.case-card__difficulty {
+  font-weight: 700;
+}
+
+.case-card__difficulty--beginner { color: var(--color-heritage-green); }
+.case-card__difficulty--intermediate { color: var(--color-antique-gold); }
+.case-card__difficulty--advanced { color: var(--color-rani-pink); }
+
+.case-card__cta {
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: var(--step--1);
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-saffron);
+  color: var(--color-ivory);
+  border-radius: var(--radius-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.case-card__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-card);
+}

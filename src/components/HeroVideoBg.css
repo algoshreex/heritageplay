@@ -1,0 +1,20 @@
+.hero-video-bg {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* video hamesha poora hero area cover karega, chahe uska aspect ratio kuch bhi ho */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Text readability ke liye halka wash — hero background jaisa color rakha hai.
+   Agar video zyada dikhna hai to opacity kam kar do ya line hata do. */
+.hero-video-bg + .hero__overlay-wash {
+  position: absolute;
+  inset: 0;
+  background: var(--color-ivory);
+  opacity: 0.55;
+  z-index: 0;
+}

@@ -1,0 +1,96 @@
+.evidence-support__score {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.score-ring {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 6px solid var(--color-hairline-strong);
+  flex-shrink: 0;
+}
+
+.score-ring span {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.score-ring--high { border-color: var(--color-evidence-high); }
+.score-ring--medium { border-color: var(--color-evidence-medium); }
+.score-ring--low { border-color: var(--color-evidence-low); }
+
+.evidence-support__score-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-charcoal-faint);
+}
+
+.evidence-support__band {
+  margin-top: 2px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.evidence-support__explainer {
+  margin-top: var(--space-5);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-ivory-deep);
+  border-left: 3px solid var(--color-antique-gold);
+  border-radius: var(--radius-sm);
+  font-size: var(--step--1);
+  color: var(--color-charcoal-soft);
+}
+
+.evidence-support__table {
+  margin-top: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.evidence-support__row {
+  padding: var(--space-4);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.evidence-support__row-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-grow: 1;
+  min-width: 160px;
+}
+
+.evidence-support__category {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-charcoal-faint);
+}
+
+.evidence-support__choice {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.evidence-support__linked {
+  flex-basis: 100%;
+  font-size: var(--step--1);
+  color: var(--color-charcoal-faint);
+  font-style: italic;
+}

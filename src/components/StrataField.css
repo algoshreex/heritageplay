@@ -1,0 +1,50 @@
+.strata-field {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.strata-field__layer {
+  flex: 1;
+  position: relative;
+  border-top: 1px solid var(--color-hairline);
+  opacity: 0;
+  animation: strata-rise 0.7s ease-out forwards;
+}
+
+.strata-field__layer:first-child {
+  border-top: none;
+}
+
+.strata-field__label {
+  position: absolute;
+  right: var(--space-6);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-charcoal-faint);
+  opacity: 0.55;
+  white-space: nowrap;
+}
+
+@media (max-width: 780px) {
+  .strata-field__label { display: none; }
+}
+
+@keyframes strata-rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .strata-field__layer {
+    opacity: 1;
+    animation: none;
+  }
+}

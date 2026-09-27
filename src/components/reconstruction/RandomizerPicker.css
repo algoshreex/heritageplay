@@ -1,0 +1,29 @@
+.randomizer-picker__toggle {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.randomizer-picker__option {
+  flex: 1;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-hairline-strong);
+  background: var(--color-ivory);
+  font-weight: 700;
+  font-size: var(--step--1);
+  color: var(--color-charcoal-soft);
+  transition: all 0.15s ease;
+}
+
+.randomizer-picker__option--selected {
+  background: var(--color-peacock);
+  border-color: var(--color-peacock);
+  color: var(--color-ivory);
+}
+
+.randomizer-picker__caption {
+  margin-top: var(--space-4);
+  font-size: var(--step--1);
+  color: var(--color-charcoal-soft);
+  max-width: 56ch;
+}

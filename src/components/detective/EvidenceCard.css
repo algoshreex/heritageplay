@@ -151,3 +151,40 @@
 .evidence-card__image:hover img {
   transform: scale(1.04);
 } 
+
+
+/* Archaeological evidence image */
+.evidence-card__image {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid #e4d8c5;
+  background: #eee3d1;
+}
+
+.evidence-card__image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.evidence-card__image:hover img {
+  transform: scale(1.04);
+}
+
+.evidence-card__image span {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 6px 10px;
+  border-radius: 7px;
+  background: rgba(42, 31, 22, 0.78);
+  color: #fff8ed;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+} 

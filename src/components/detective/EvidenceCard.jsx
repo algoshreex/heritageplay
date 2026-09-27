@@ -92,13 +92,14 @@ export default function EvidenceCard({
 
           {/* Archaeological image */}
           {evidence.image && (
-            <div className="evidence-card__image">
-              <img
-                src={evidence.image}
-                alt={evidence.title}
-                loading="lazy"
-              />
-            </div>
+           <div className="evidence-card__image">
+  <img 
+    src={evidence.image} 
+    alt={evidence.title} 
+    loading="lazy" 
+  />
+  <span>Illustrative reconstruction</span>
+</div> 
           )}
 
           <div className="evidence-card__field">

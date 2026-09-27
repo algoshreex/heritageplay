@@ -67,8 +67,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section className="artifact-strip" aria-hidden="true">
+      
+    <section className="artifact-strip" aria-hidden="true">
         <div className="container artifact-strip__inner">
           <IconDice className="artifact-strip__icon" />
           <IconPot className="artifact-strip__icon" />

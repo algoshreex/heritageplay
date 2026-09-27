@@ -1,0 +1,126 @@
+/* Entrance animation: fade + slide up once scrolled into view (see
+   useInView.js). transition-delay is set inline per-card for the stagger. */
+.story-card {
+  background: var(--color-ivory-deep);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.story-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.story-card__header {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding: var(--space-6);
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.story-card__title {
+  margin-top: var(--space-2);
+  font-size: var(--step-1);
+}
+
+.story-card__teaser {
+  margin-top: var(--space-2);
+  color: var(--color-charcoal-soft);
+}
+
+.story-card__toggle {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-saffron);
+  color: var(--color-ivory);
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.story-card__toggle.is-open {
+  transform: rotate(135deg);
+}
+
+/* Smooth expand/collapse without measuring scrollHeight in JS: animating
+   grid-template-rows between 0fr and 1fr clips the (overflow-hidden) inner
+   content to whatever height it needs. Needs a reasonably modern browser
+   (Chrome/Firefox/Edge, Safari 16+) — fine for a hackathon demo. */
+.story-card__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease;
+}
+
+.story-card__panel.is-open {
+  grid-template-rows: 1fr;
+}
+
+.story-card__panel-inner {
+  min-height: 0;
+  overflow: hidden;
+  padding: 0 var(--space-6);
+}
+
+.story-card__panel.is-open .story-card__panel-inner {
+  padding: 0 var(--space-6) var(--space-6);
+}
+
+.story-card__quote {
+  margin: var(--space-4) 0;
+  padding: var(--space-4) var(--space-5);
+  border-left: 3px solid var(--color-saffron);
+  background: var(--color-ivory);
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-charcoal-soft);
+}
+
+.story-card__quote p + p {
+  margin-top: var(--space-3);
+}
+
+.story-card__quote.story-card__cite{
+  display: block;
+  margin-top: var(--space-3);
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: var(--step--1);
+  font-weight: 700;
+  color: var(--color-charcoal);
+}
+
+.story-card__caption {
+  margin: var(--space-4) 0 0;
+  padding: var(--space-3) var(--space-4);
+  border: 1px dashed var(--color-hairline-strong);
+  border-radius: var(--radius-md);
+}
+
+.story-card__caption p {
+  margin-top: var(--space-2);
+  color: var(--color-charcoal-soft);
+  font-size: var(--step--1);
+}
+
+.story-card__footnote {
+  margin-top: var(--space-4);
+  font-size: var(--step--1);
+  color: var(--color-charcoal-faint);
+}

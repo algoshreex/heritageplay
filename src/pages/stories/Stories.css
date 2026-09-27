@@ -1,0 +1,28 @@
+.stories {
+  padding: var(--space-8) 0 var(--space-9);
+}
+
+.stories h1 {
+  margin-top: var(--space-3);
+}
+
+.stories__lede {
+  max-width: 620px;
+  margin-top: var(--space-4);
+  color: var(--color-charcoal-soft);
+  font-size: var(--step-1);
+}
+
+.stories__back {
+  display: inline-block;
+  margin-top: var(--space-5);
+  font-weight: 700;
+  color: var(--color-saffron);
+}
+
+.stories__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+}

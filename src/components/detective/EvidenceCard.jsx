@@ -5,7 +5,7 @@ import {
   IconPiece,
   IconBoard,
   IconScroll,
-  IconPin,
+  IconPin, 
   IconClock
 } from '../Icons.jsx'
 import './EvidenceCard.css'

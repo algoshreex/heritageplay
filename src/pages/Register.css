@@ -1,0 +1,402 @@
+.register-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #fbf5e7;
+}
+
+/* LEFT SIDE */
+
+.register-visual {
+  position: relative;
+  min-height: 100vh;
+  padding: 48px 58px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      rgba(37, 25, 18, 0.58),
+      rgba(37, 25, 18, 0.68)
+    ),
+    url("/page-hero-bg.jpg") center / cover no-repeat;
+}
+
+.register-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #fff8ed;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.brand-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: #f97316;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: Arial, sans-serif;
+  font-size: 28px;
+}
+
+.register-visual-content {
+  max-width: 620px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.register-eyebrow,
+.eyebrow {
+  margin-bottom: 22px;
+
+  color: #f97316;
+
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.register-visual h1 {
+  margin: 0;
+
+  color: #17110d;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(54px, 5vw, 82px);
+  line-height: 0.95;
+  letter-spacing: -3px;
+}
+
+.register-visual h1 span {
+  color: #f97316;
+  font-style: italic;
+}
+
+.visual-description {
+  max-width: 540px;
+  margin-top: 34px;
+
+  color: #fff8ed;
+
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.register-footer {
+  color: #fff8ed;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+
+/* RIGHT SIDE */
+
+.register-form-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 60px 70px;
+
+  background: #fbf5e7;
+}
+
+.register-form-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.register-form-section .register-eyebrow {
+  margin-bottom: 18px;
+  color: #d95d20;
+}
+
+.register-form-container h2 {
+  margin: 0;
+
+  color: #30231d;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 4vw, 58px);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.register-subtitle {
+  margin: 18px 0 38px;
+
+  color: #725f54;
+
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+/* FORM */
+
+.form-group {
+  margin-bottom: 23px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+
+  color: #30231d;
+
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 17px 18px;
+
+  border: 1px solid #dfd0bd;
+  border-radius: 10px;
+  outline: none;
+
+  background: #fffaf0;
+
+  color: #30231d;
+
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder {
+  color: #a99481;
+}
+
+.form-group input:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.12);
+}
+
+
+/* PASSWORD */
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  padding-right: 75px;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+
+  transform: translateY(-50%);
+
+  border: none;
+  background: transparent;
+
+  color: #ed6a1c;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.password-toggle:hover {
+  color: #c64f0d;
+}
+
+
+/* BUTTON */
+
+.register-button {
+  width: 100%;
+
+  margin-top: 8px;
+  padding: 18px 22px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #f36b18;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.register-button:hover {
+  background: #d9570d;
+  transform: translateY(-1px);
+}
+
+.register-button span {
+  font-size: 22px;
+}
+
+
+/* MESSAGE */
+
+.register-message {
+  margin-bottom: 22px;
+  padding: 13px 15px;
+
+  border-radius: 8px;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.register-message.error {
+  background: #fff0eb;
+  border: 1px solid #f2c4b2;
+  color: #a94825;
+}
+
+.register-message.success {
+  background: #edf7ed;
+  border: 1px solid #bfd9bf;
+  color: #39703d;
+}
+
+
+/* LOGIN LINK */
+
+.login-link {
+  margin-top: 28px;
+
+  text-align: center;
+
+  color: #725f54;
+
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.login-link button {
+  margin-left: 5px;
+
+  border: none;
+  background: transparent;
+
+  color: #e65f13;
+
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.login-link button:hover {
+  text-decoration: underline;
+}
+
+
+/* TERMS */
+
+.register-terms {
+  margin-top: 30px;
+
+  color: #9a8979;
+
+  text-align: center;
+
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .register-page {
+    grid-template-columns: 1fr;
+  }
+
+  .register-visual {
+    min-height: 380px;
+    padding: 35px 30px;
+  }
+
+  .register-visual h1 {
+    font-size: 52px;
+  }
+
+  .register-form-section {
+    min-height: auto;
+    padding: 55px 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .register-visual {
+    min-height: 330px;
+    padding: 28px 22px;
+  }
+
+  .register-brand {
+    font-size: 24px;
+  }
+
+  .brand-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 23px;
+  }
+
+  .register-visual h1 {
+    font-size: 43px;
+    letter-spacing: -2px;
+  }
+
+  .visual-description {
+    font-size: 14px;
+  }
+
+  .register-form-section {
+    padding: 45px 22px;
+  }
+
+  .register-form-container h2 {
+    font-size: 42px;
+  }
+} 

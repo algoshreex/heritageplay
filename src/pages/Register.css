@@ -330,6 +330,77 @@
 }
 
 
+/* DIVIDER & GOOGLE */
+
+.register-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin: 28px 0;
+}
+
+.register-divider::before,
+.register-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #dfd0bd;
+}
+
+.register-divider span {
+  color: #a99481;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+
+  white-space: nowrap;
+}
+
+.register-form-container .google-button {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 16px 22px;
+
+  border: 1px solid #dfd0bd;
+  border-radius: 10px;
+
+  background: #fffaf0;
+  color: #30231d;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.register-form-container .google-button:hover {
+  background: #fff0e0;
+  border-color: #f97316;
+}
+
+.register-form-container .google-icon {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #4285f4, #ea4335, #fbbc05, #34a853);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
 /* TERMS */
 
 .register-terms {

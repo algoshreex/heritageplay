@@ -168,9 +168,18 @@ const [messageType, setMessageType] = useState("");
           <button
             type="button"
             className="google-button"
-            onClick={() =>
-              alert("Google sign-in will be connected later.")
-            }
+            onClick={async () => {
+              const { error } = await supabase.auth.signInWithOAuth({
+                provider: 'google',
+                options: {
+                  redirectTo: window.location.origin + '/start',
+                },
+              });
+              if (error) {
+                setMessageType("error");
+                setMessage(error.message);
+              }
+            }}
           >
             <span className="google-icon">G</span>
             Continue with Google

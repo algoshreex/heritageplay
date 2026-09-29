@@ -189,6 +189,30 @@ function Register() {
 
           </form>
 
+          <div className="register-divider">
+            <span>or continue with</span>
+          </div>
+
+          <button
+            type="button"
+            className="google-button"
+            onClick={async () => {
+              const { error } = await supabase.auth.signInWithOAuth({
+                provider: 'google',
+                options: {
+                  redirectTo: window.location.origin + '/start',
+                },
+              });
+              if (error) {
+                setMessageType("error");
+                setMessage(error.message);
+              }
+            }}
+          >
+            <span className="google-icon">G</span>
+            Continue with Google
+          </button>
+
           <div className="login-link">
             Already have an account?
             <button onClick={() => navigate("/login")}>

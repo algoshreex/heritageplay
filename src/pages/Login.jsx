@@ -42,6 +42,7 @@ const [messageType, setMessageType] = useState("");
 
   setMessageType("success");
   setMessage("Login successful! Welcome back.");
+  setTimeout(() => navigate("/start"), 1000);
 }; 
   return (
     <div className="login-page">

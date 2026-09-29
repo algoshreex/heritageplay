@@ -7,7 +7,7 @@
   align-items: flex-end;
   border-radius: var(--radius-lg);
   margin-top: var(--space-5);
-  color: var(--color-ivory);
+  color: #FFF8E7;
 }
 
 .page-hero__bg {
@@ -52,7 +52,7 @@
 
 .page-hero__title {
   margin-top: var(--space-2);
-  color: var(--color-ivory);
+  color: #FFF8E7;
   font-size: clamp(2rem, 4vw, 2.8rem);
   line-height: 1.1;
 }

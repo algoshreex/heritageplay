@@ -1,50 +1,83 @@
-/* ---- Hero ---- */
+/* ==========================================================================
+   Home Page — HeritagePlay
+   ========================================================================== */
+
+/* ---- Full-viewport Hero ---- */
 .hero {
   position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  max-height: 1200px;
   overflow: hidden;
-  /* padding: var(--space-9) 0 var(--space-8); */
-  min-height: 640px;
-  /* display: flex;  */
+  display: flex;
   align-items: center;
+  /* Fallback background if video fails */
+  background: var(--color-charcoal);
 }
 
-.hero-v{
-  position: absolute;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-}
-
-.hero__inner {
-  position: relative;
-  z-index: 1;
-  max-width: 760px;
-}
-
-/* Sits above the video (and StrataField) but below hero__inner's text/cards,
-   so the heading stays readable over the clip. Lower the opacity (or delete
-   this rule + the <div className="hero__overlay-wash" /> in Home.jsx) if you
-   want the footage to show through more strongly. */
-.hero__overlay-wash {
+.hero__video-wrap {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: var(--color-ivory);
-  opacity: 0.55;
+}
+
+/* Gradient overlay for text readability */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--hero-overlay);
+}
+
+/* ---- Hero content ---- */
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  padding-top: var(--nav-height);
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero__inner--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero__eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--step--1);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--hero-eyebrow);
 }
 
 .hero__heading {
   margin-top: var(--space-4);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  color: var(--hero-text);
+  font-size: var(--step-5);
+  line-height: 1.06;
+  font-weight: 600;
+}
+
+.hero__heading-accent {
+  color: var(--color-saffron);
 }
 
 .hero__sub {
   margin-top: var(--space-5);
   font-size: var(--step-1);
-  color: var(--color-charcoal-soft);
+  color: var(--hero-sub);
   max-width: 56ch;
+  line-height: 1.5;
 }
 
+/* ---- Hero CTA cards ---- */
 .hero__actions {
   margin-top: var(--space-7);
   display: flex;
@@ -56,40 +89,105 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  width: 260px;
+  width: 250px;
   padding: var(--space-5);
-  background: var(--color-ivory);
-  border: 1.5px solid var(--color-hairline-strong);
+  background: var(--hero-card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--hero-card-border);
   border-radius: var(--radius-md);
   border-left-width: 4px;
-  box-shadow: var(--shadow-card);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* Staggered entrance */
+  opacity: 0;
+  animation: heroCardIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes heroCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero__action:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-raised);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
 }
 
 .hero__action-title {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
+  color: var(--color-charcoal);
 }
 
 .hero__action-body {
   font-size: var(--step--1);
   color: var(--color-charcoal-soft);
+  flex-grow: 1;
+}
+
+.hero__action-arrow {
+  align-self: flex-end;
+  font-size: 1.1rem;
+  color: var(--color-saffron);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.hero__action:hover .hero__action-arrow {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .hero__action--saffron { border-left-color: var(--color-saffron); }
 .hero__action--royal-blue { border-left-color: var(--color-royal-blue); }
 .hero__action--heritage-green { border-left-color: var(--color-heritage-green); }
 
+/* ---- Scroll hint ---- */
+.hero__scroll-hint {
+  margin-top: var(--space-8);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--hero-sub);
+  opacity: 0.7;
+  animation: scrollHintPulse 2.5s ease-in-out infinite;
+}
+
+.hero__scroll-chevron {
+  display: inline-flex;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+@keyframes scrollHintPulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 0.4; }
+}
+
 /* ---- Artifact strip divider ---- */
 .artifact-strip {
   background: var(--color-royal-blue);
   padding: var(--space-5) 0;
+  transition: background-color 0.35s ease;
+}
+
+:root[data-theme='dark'] .artifact-strip {
+  background: #1A2A40;
 }
 
 .artifact-strip__inner {
@@ -98,6 +196,10 @@
   gap: clamp(var(--space-6), 8vw, var(--space-9));
   color: var(--color-ivory);
   opacity: 0.85;
+}
+
+:root[data-theme='dark'] .artifact-strip__inner {
+  color: var(--color-charcoal);
 }
 
 .artifact-strip__icon {
@@ -131,25 +233,49 @@
 }
 
 .journey-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
   padding: var(--space-5);
   border-radius: var(--radius-md);
-  background: var(--color-ivory);
+  background: var(--color-surface-raised);
   border: 1px solid var(--color-hairline);
   border-top-width: 3px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.35s ease;
 }
 
 .journey-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-card);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-raised);
+}
+
+.journey-card__icon {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-1);
 }
 
 .journey-card h3 { font-size: 1.15rem; }
 
 .journey-card p {
-  margin-top: var(--space-2);
+  margin-top: var(--space-1);
   color: var(--color-charcoal-soft);
   font-size: var(--step--1);
+  flex-grow: 1;
+}
+
+.journey-card__arrow {
+  align-self: flex-end;
+  color: var(--color-saffron);
+  font-weight: 700;
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.journey-card:hover .journey-card__arrow {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .journey-card--saffron { border-top-color: var(--color-saffron); }
@@ -230,8 +356,17 @@
 }
 
 @media (max-width: 640px) {
-  .hero { padding: var(--space-8) 0 var(--space-7); min-height: 0; }
+  .hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  .hero__inner {
+    padding-top: calc(var(--nav-height) + var(--space-4));
+    padding-bottom: var(--space-6);
+  }
   .hero__action { width: 100%; }
   .journey-grid { grid-template-columns: 1fr; }
   .artifact-strip__inner { gap: var(--space-6); }
+  .hero__scroll-hint { display: none; }
+  .hero__heading { font-size: var(--step-4); }
 }

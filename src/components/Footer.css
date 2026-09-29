@@ -2,6 +2,7 @@
   border-top: 1px solid var(--color-hairline);
   padding: var(--space-6) 0;
   margin-top: var(--space-9);
+  transition: background-color 0.35s ease, border-color 0.35s ease;
 }
 
 .footer__inner {

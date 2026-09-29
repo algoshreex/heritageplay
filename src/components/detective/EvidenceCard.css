@@ -136,8 +136,8 @@
   margin-bottom: 24px;
   overflow: hidden;
   border-radius: 14px;
-  background: #eee4d2;
-  border: 1px solid #e5d8c3;
+  background: var(--color-ivory-deep);
+  border: 1px solid var(--color-hairline-strong);
 }
 
 .evidence-card__image img {
@@ -161,8 +161,8 @@
   margin-bottom: 24px;
   overflow: hidden;
   border-radius: 14px;
-  border: 1px solid #e4d8c5;
-  background: #eee3d1;
+  border: 1px solid var(--color-hairline-strong);
+  background: var(--color-ivory-deep);
 }
 
 .evidence-card__image img {

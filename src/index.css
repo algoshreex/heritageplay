@@ -1,9 +1,13 @@
 /* ==========================================================================
    HeritagePlay — Design System
-   Phase 1: Foundation
+   Phase 1: Foundation  |  Phase 2: Dark/Light Theme
    ========================================================================== */
 
-:root {
+/* ----- Light theme (default) ----- */
+:root,
+:root[data-theme='light'] {
+  color-scheme: light;
+
   /* ---- Color: Heritage palette (from spec) ---- */
   --color-saffron: #FF6B00;
   --color-royal-blue: #123C73;
@@ -22,7 +26,87 @@
   --color-hairline: rgba(33, 26, 23, 0.12);
   --color-hairline-strong: rgba(33, 26, 23, 0.22);
 
-  /* Semantic evidence-status colors (used across the whole app, not just detective module) */
+  /* Surfaces — cards, modals, inputs */
+  --color-surface: #FFFFFF;
+  --color-surface-raised: #FFF8E7;
+  --color-surface-inset: #F5ECD8;
+
+  /* Nav */
+  --nav-bg: rgba(255, 248, 231, 0.92);
+  --nav-border: rgba(33, 26, 23, 0.10);
+
+  /* Shadows */
+  --shadow-card: 0 1px 2px rgba(33, 26, 23, 0.06), 0 8px 24px -12px rgba(33, 26, 23, 0.18);
+  --shadow-raised: 0 2px 4px rgba(33, 26, 23, 0.08), 0 16px 32px -16px rgba(33, 26, 23, 0.28);
+
+  /* Hero overlay */
+  --hero-overlay: linear-gradient(
+    165deg,
+    rgba(33, 26, 23, 0.72) 0%,
+    rgba(33, 26, 23, 0.52) 40%,
+    rgba(33, 26, 23, 0.30) 70%,
+    rgba(33, 26, 23, 0.15) 100%
+  );
+  --hero-text: #FFF8E7;
+  --hero-sub: rgba(255, 248, 231, 0.82);
+  --hero-card-bg: rgba(255, 248, 231, 0.92);
+  --hero-card-border: rgba(255, 248, 231, 0.35);
+  --hero-eyebrow: var(--color-antique-gold);
+}
+
+/* ----- Dark theme ----- */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  /* Core palette stays — semantic tokens change */
+  --color-ivory: #1A1512;
+  --color-ivory-deep: #231D17;
+  --color-charcoal: #F2E8D5;
+  --color-charcoal-soft: #C9BAA3;
+  --color-charcoal-faint: #918272;
+  --color-hairline: rgba(242, 232, 213, 0.10);
+  --color-hairline-strong: rgba(242, 232, 213, 0.18);
+
+  /* Surfaces */
+  --color-surface: #1F1914;
+  --color-surface-raised: #282018;
+  --color-surface-inset: #15110D;
+
+  /* Nav */
+  --nav-bg: rgba(26, 21, 18, 0.92);
+  --nav-border: rgba(242, 232, 213, 0.08);
+
+  /* Shadows (subtler in dark mode) */
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.20), 0 8px 24px -12px rgba(0, 0, 0, 0.40);
+  --shadow-raised: 0 2px 4px rgba(0, 0, 0, 0.25), 0 16px 32px -16px rgba(0, 0, 0, 0.50);
+
+  /* Hero overlay */
+  --hero-overlay: linear-gradient(
+    165deg,
+    rgba(10, 8, 6, 0.80) 0%,
+    rgba(10, 8, 6, 0.60) 40%,
+    rgba(10, 8, 6, 0.35) 70%,
+    rgba(10, 8, 6, 0.20) 100%
+  );
+  --hero-text: #F2E8D5;
+  --hero-sub: rgba(242, 232, 213, 0.78);
+  --hero-card-bg: rgba(35, 29, 23, 0.88);
+  --hero-card-border: rgba(242, 232, 213, 0.14);
+  --hero-eyebrow: var(--color-antique-gold);
+
+  /* Accent bumps for legibility */
+  --color-saffron: #FF8533;
+  --color-royal-blue: #5E9ADB;
+  --color-heritage-green: #3BBF83;
+  --color-peacock: #33C4CC;
+  --color-rani-pink: #E84F8A;
+  --color-royal-purple: #B06EE0;
+  --color-antique-gold: #E8B832;
+}
+
+/* ----- Non-theme tokens (same in both modes) ----- */
+:root {
+  /* Semantic evidence-status colors */
   --color-evidence-high: var(--color-heritage-green);
   --color-evidence-medium: var(--color-antique-gold);
   --color-evidence-low: #B23A2E;
@@ -31,6 +115,7 @@
   --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
   --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
+  --step--2: clamp(0.72rem, 0.7rem + 0.1vw, 0.78rem);
   --step--1: clamp(0.8rem, 0.78rem + 0.1vw, 0.875rem);
   --step-0:  clamp(1rem, 0.97rem + 0.15vw, 1.125rem);
   --step-1:  clamp(1.2rem, 1.13rem + 0.35vw, 1.5rem);
@@ -50,21 +135,22 @@
   --space-8: 4.5rem;
   --space-9: 6.5rem;
 
-  /* ---- Radius & shadow (kept restrained — no glassmorphism, no heavy gradients) ---- */
-  --radius-sm: 4px;
-  --radius-md: 10px;
+  /* ---- Radius ---- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
   --radius-lg: 18px;
-  --shadow-card: 0 1px 2px rgba(33, 26, 23, 0.06), 0 8px 24px -12px rgba(33, 26, 23, 0.18);
-  --shadow-raised: 0 2px 4px rgba(33, 26, 23, 0.08), 0 16px 32px -16px rgba(33, 26, 23, 0.28);
 
   /* ---- Layout ---- */
   --content-max: 1180px;
-  --nav-height: 76px;
+  --nav-height: 72px;
 }
 
 /* ---- Reset ---- */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
 body {
   margin: 0;
@@ -74,6 +160,8 @@ body {
   font-size: var(--step-0);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.35s ease, color 0.35s ease;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
@@ -82,6 +170,7 @@ h1, h2, h3, h4 {
   line-height: 1.08;
   margin: 0;
   font-weight: 600;
+  transition: color 0.35s ease;
 }
 
 h1 { font-size: var(--step-5); font-weight: 600; }
@@ -101,6 +190,16 @@ button {
 img, svg { display: block; max-width: 100%; }
 
 ul, ol { margin: 0; padding: 0; list-style: none; }
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--color-charcoal);
+  background: var(--color-surface);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: var(--radius-sm);
+  transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease;
+}
 
 /* ---- Utility ---- */
 .eyebrow {
@@ -137,6 +236,43 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   border-radius: var(--radius-sm);
 }
 
+/* ---- Theme transition for all themed elements ---- */
+.nav,
+.footer,
+.case-card,
+.evidence-card,
+.game-card,
+.game-card__body,
+.story-card,
+.stage-shell,
+.hero__action,
+.journey-card,
+.page-hero,
+.section--evidence,
+.section--demo,
+.artifact-strip,
+.detective-list__notice,
+.case-study__notice,
+.case-study__scores,
+.play-hub__notice,
+.play-reconstruction__board,
+.compare-page__scores,
+.compare-page__closing,
+.heritage-map__sidebar,
+.heritage-map__detail,
+.heritage-map__search,
+.heritage-map__mapframe,
+.toy-maker__picker-card,
+.toy-maker__didyouknow,
+.explore__category-card,
+.explore__site-card,
+.explore__map-band,
+.explore__banner,
+.explore__artifact-card,
+.explore__city-chip {
+  transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
@@ -144,4 +280,17 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ---- Scroll-reveal animation helper ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }

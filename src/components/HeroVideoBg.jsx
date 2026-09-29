@@ -1,4 +1,4 @@
-// import './HeroVideoBg.css'
+import './HeroVideoBg.css'
 
 export default function HeroVideoBg({ src }) {
   return (
@@ -10,6 +10,7 @@ export default function HeroVideoBg({ src }) {
       loop
       playsInline
       aria-hidden="true"
+      poster="/page-hero-bg.jpg"
     />
   )
 }

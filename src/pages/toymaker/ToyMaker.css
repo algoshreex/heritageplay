@@ -1,4 +1,4 @@
-.toy-maker { padding-bottom: var(--space-9); }
+/* .toy-maker { padding-bottom: var(--space-9); } */
 
 .toy-maker__hero-accent { color: var(--color-saffron); }
 
@@ -106,10 +106,10 @@
 }
 .toy-maker__option:hover { border-color: var(--color-saffron); }
 .toy-maker__option-emoji { font-size: 1.6rem; }
-.toy-maker__option.is-correct { border-color: #2e7d32; background: rgba(46,125,50,0.08); }
-.toy-maker__option.is-wrong { border-color: #b3261e; background: rgba(179,38,30,0.06); }
+.toy-maker__option.is-correct { border-color: var(--color-heritage-green); background: rgba(46,125,50,0.08); }
+.toy-maker__option.is-wrong { border-color: var(--color-evidence-low); background: rgba(179,38,30,0.06); }
 
-.toy-maker__hint { text-align: center; margin-top: var(--space-3); color: #b3261e; font-size: var(--step--1); }
+.toy-maker__hint { text-align: center; margin-top: var(--space-3); color: var(--color-evidence-low); font-size: var(--step--1); }
 .toy-maker__change-toy { display: block; margin: var(--space-6) auto 0; background: none; border: none; color: var(--color-charcoal-faint); text-decoration: underline; cursor: pointer; font-size: var(--step--1); }
 
 /* ---- Completion ---- */

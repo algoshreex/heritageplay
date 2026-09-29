@@ -2,6 +2,10 @@ import { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import StrataField from '../components/StrataField.jsx'
 import HeroVideoBg from '../components/HeroVideoBg.jsx'
+import StatsCounter from '../components/StatsCounter.jsx'
+import FeaturedShowcase from '../components/FeaturedShowcase.jsx'
+import TestimonialCarousel from '../components/TestimonialCarousel.jsx'
+import CtaBanner from '../components/CtaBanner.jsx'
 import { IconDice, IconPot, IconPiece, IconBoard } from '../components/Icons.jsx'
 import './Home.css'
 
@@ -84,6 +88,22 @@ export default function Home() {
         </div>
         <div className="hero__overlay" aria-hidden="true" />
 
+        {/* Floating particles in hero */}
+        <div className="hero__particles" aria-hidden="true">
+          {Array.from({ length: 30 }).map((_, i) => (
+            <span
+              key={i}
+              className="hero__particle"
+              style={{
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 6}s`,
+                animationDuration: `${5 + Math.random() * 8}s`,
+                opacity: 0.15 + Math.random() * 0.35,
+              }}
+            />
+          ))}
+        </div>
+
         <div className={`container hero__inner ${heroLoaded ? 'hero__inner--visible' : ''}`}>
           <p className="hero__eyebrow">Smart India Hackathon 2026 · SIH26208</p>
           <h1 className="hero__heading">
@@ -131,6 +151,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ---- Stats Counter Section ---- */}
+      <StatsCounter />
+
       {/* ---- Six ways into the past ---- */}
       <section className="section">
         <div className="container">
@@ -159,6 +182,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ---- Featured Artifact Showcase ---- */}
+      <FeaturedShowcase />
+
       {/* ---- Evidence philosophy band ---- */}
       <section className="section section--evidence">
         <div className="container evidence-band">
@@ -182,6 +208,12 @@ export default function Home() {
           </RevealSection>
         </div>
       </section>
+
+      {/* ---- Testimonial Carousel ---- */}
+      <TestimonialCarousel />
+
+      {/* ---- CTA Banner ---- */}
+      <CtaBanner />
     </>
   )
 }

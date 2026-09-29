@@ -1,36 +1,179 @@
+/* ============================================================
+   Footer — HeritagePlay (Enhanced)
+   ============================================================ */
+
 .footer {
+  position: relative;
   border-top: 1px solid var(--color-hairline);
-  padding: var(--space-6) 0;
+  padding: var(--space-8) 0 0;
   margin-top: var(--space-9);
+  background: var(--color-charcoal);
+  overflow: hidden;
   transition: background-color 0.35s ease, border-color 0.35s ease;
 }
 
-.footer__inner {
+:root[data-theme='dark'] .footer {
+  background: #0f0c0a;
+}
+
+.footer__glow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 800px;
+  height: 400px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse, rgba(255, 107, 0, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Grid layout */
+.footer__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: var(--space-7);
+  padding-bottom: var(--space-7);
+}
+
+/* Brand column */
+.footer__brand-col {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: var(--space-2);
-  text-align: center;
+  gap: var(--space-4);
 }
 
 .footer__brand {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-3);
+}
+
+.footer__seal { color: var(--color-saffron); }
+
+.footer__wordmark {
   font-family: var(--font-display);
   font-weight: 600;
-  color: var(--color-charcoal);
+  font-size: 1.3rem;
+  color: #f2e8d5;
+  letter-spacing: -0.01em;
 }
 
-.footer__seal { color: var(--color-royal-blue); }
-
-.footer__line {
+.footer__tagline {
   font-family: var(--font-display);
   font-style: italic;
-  color: var(--color-charcoal-soft);
+  font-size: var(--step--1);
+  color: rgba(242, 232, 213, 0.55);
+  max-width: 28ch;
+  line-height: 1.5;
 }
 
-.footer__meta {
+/* Social icons */
+.footer__social {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.footer__social-link {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(242, 232, 213, 0.08);
+  color: rgba(242, 232, 213, 0.6);
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.footer__social-link:hover {
+  background: var(--color-saffron);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Link columns */
+.footer__col-title {
+  font-family: var(--font-body);
+  font-size: var(--step--2);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(242, 232, 213, 0.45);
+  margin-bottom: var(--space-4);
+}
+
+.footer__link-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer__link {
   font-size: var(--step--1);
-  color: var(--color-charcoal-faint);
+  font-weight: 500;
+  color: rgba(242, 232, 213, 0.7);
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer__link:hover {
+  color: #f2e8d5;
+  transform: translateX(3px);
+}
+
+/* Bottom bar */
+.footer__bottom {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) 0;
+  border-top: 1px solid rgba(242, 232, 213, 0.08);
+}
+
+.footer__copyright {
+  font-size: var(--step--2);
+  color: rgba(242, 232, 213, 0.35);
+}
+
+.footer__built-with {
+  font-size: var(--step--2);
+  color: rgba(242, 232, 213, 0.35);
+}
+
+.footer__heart {
+  color: var(--color-rani-pink);
+  display: inline-block;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+  .footer__brand-col {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+  .footer__bottom {
+    flex-direction: column;
+    gap: var(--space-2);
+    text-align: center;
+  }
 }

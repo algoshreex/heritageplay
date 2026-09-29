@@ -370,3 +370,68 @@
   .hero__scroll-hint { display: none; }
   .hero__heading { font-size: var(--step-4); }
 }
+
+/* ---- Hero floating particles ---- */
+.hero__particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero__particle {
+  position: absolute;
+  bottom: -10px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #d4a017;
+  box-shadow: 0 0 8px rgba(212, 160, 23, 0.6);
+  animation: heroParticleFloat linear infinite;
+}
+
+@keyframes heroParticleFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  8% { opacity: 1; }
+  92% { opacity: 0.8; }
+  100% {
+    transform: translateY(-100vh) translateX(30px);
+    opacity: 0;
+  }
+}
+
+/* ---- Journey card hover glow ---- */
+.journey-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-md);
+  padding: 2px;
+  background: linear-gradient(135deg, transparent 40%, var(--color-saffron) 50%, transparent 60%);
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.journey-card {
+  position: relative;
+}
+
+.journey-card:hover::before {
+  opacity: 1;
+  animation: borderShine 2s linear infinite;
+}
+
+@keyframes borderShine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+

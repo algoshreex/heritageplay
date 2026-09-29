@@ -1,6 +1,8 @@
 import {BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom' 
 import Navigation from './components/Navigation.jsx'
 import Footer from './components/Footer.jsx'
+import LoadingScreen from './components/LoadingScreen.jsx'
+import ScrollToTop from './components/ScrollToTop.jsx'
 import Home from './pages/Home.jsx'
 import Placeholder from './pages/Placeholder.jsx'
 import Detective from './pages/detective/Detective.jsx'
@@ -25,9 +27,12 @@ const COMING_SOON = [
 
 export default function App() { 
   const location = useLocation() 
+  const isAuthPage = location.pathname === '/login' || location.pathname === '/register'
+  
   return (
     <>
-      {location.pathname !== '/login' && <Navigation />} 
+      <LoadingScreen />
+      {!isAuthPage && <Navigation />} 
       <main>
         <Routes> 
           <Route path="/start" element={<Home />} /> 
@@ -53,7 +58,8 @@ export default function App() {
           ))}
         </Routes>
       </main>
-      <Footer />
+      {!isAuthPage && <Footer />}
+      <ScrollToTop />
     </>
   )
 }

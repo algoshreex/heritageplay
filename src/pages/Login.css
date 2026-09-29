@@ -510,3 +510,66 @@
   border: 1px solid #bfd9bf;
   color: #39703d;
 } 
+
+/* ================================
+   ENTRANCE ANIMATIONS
+   ================================ */
+
+.login-visual-content {
+  animation: loginFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+.login-form-container {
+  animation: loginSlideIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
+.login-brand {
+  animation: loginFadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+.login-visual-footer {
+  animation: loginFadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+}
+
+@keyframes loginFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loginSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Subtle shimmer on the visual panel background */
+.login-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(243, 154, 74, 0.08) 45%,
+    transparent 50%
+  );
+  background-size: 200% 100%;
+  animation: loginShimmer 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes loginShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

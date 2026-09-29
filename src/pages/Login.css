@@ -1,0 +1,512 @@
+/* ================================
+   HERITAGEPLAY LOGIN PAGE
+   ================================ */
+
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #f7f0df;
+  color: #2d241f;
+}
+
+/* ================================
+   LEFT VISUAL PANEL
+   ================================ */
+
+.login-visual {
+  position: relative;
+  min-height: 100vh;
+  padding: 42px 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      rgba(58, 39, 27, 0.62),
+      rgba(58, 39, 27, 0.72)
+    ),
+    url("/page-hero-bg.jpg") center / cover no-repeat;
+  color: #fffaf0;
+}
+
+.login-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 75% 30%,
+      rgba(222, 139, 55, 0.25),
+      transparent 35%
+    );
+  pointer-events: none;
+}
+
+/* Brand */
+
+.login-brand {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.login-logo {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: #f36f21;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* Main visual content */
+
+.login-visual-content {
+  position: relative;
+  z-index: 2;
+  max-width: 590px;
+}
+
+.login-eyebrow {
+  display: inline-block;
+  margin-bottom: 22px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #f4b36d;
+}
+
+.login-visual-content h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(48px, 5vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+.login-visual-content h1 em {
+  color: #f39a4a;
+  font-style: italic;
+}
+
+.login-visual-content p {
+  max-width: 480px;
+  margin: 30px 0 0;
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255, 250, 240, 0.82);
+}
+
+.login-visual-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: rgba(255, 250, 240, 0.7);
+}
+
+.login-visual-footer span:first-child {
+  color: #f39a4a;
+  font-size: 18px;
+}
+
+/* ================================
+   RIGHT LOGIN PANEL
+   ================================ */
+
+.login-form-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 35px;
+  background: #fbf5e7;
+}
+
+.login-form-container {
+  width: min(100%, 460px);
+}
+
+/* Mobile brand hidden on desktop */
+
+.mobile-brand {
+  display: none;
+}
+
+/* Heading */
+
+.login-heading {
+  margin-bottom: 34px;
+}
+
+.login-small-label {
+  display: block;
+  margin-bottom: 13px;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #d56a25;
+}
+
+.login-heading h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 48px;
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  color: #2d241f;
+}
+
+.login-heading p {
+  margin: 13px 0 0;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #766b62;
+}
+
+/* ================================
+   FORM
+   ================================ */
+
+.form-group {
+  margin-bottom: 23px;
+}
+
+.form-group label,
+.password-label-row label {
+  display: block;
+  margin-bottom: 9px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #40352e;
+}
+
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 53px;
+  padding: 0 16px;
+  border: 1px solid #d9cdbb;
+  border-radius: 9px;
+  outline: none;
+  background: #fffaf0;
+  color: #2d241f;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.form-group input::placeholder {
+  color: #a79b8d;
+}
+
+.form-group input:focus {
+  border-color: #e87528;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(232, 117, 40, 0.1);
+}
+
+/* Password */
+
+.password-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.password-label-row label {
+  margin-bottom: 9px;
+}
+
+.forgot-password {
+  margin-bottom: 9px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #d96825;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.password-input {
+  position: relative;
+}
+
+.password-input input {
+  padding-right: 70px;
+}
+
+.show-password {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: #d96825;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Remember me */
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 2px 0 24px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  color: #665b52;
+  cursor: pointer;
+}
+
+.remember-me input {
+  width: 16px;
+  height: 16px;
+  accent-color: #e87528;
+  cursor: pointer;
+}
+
+/* Sign in */
+
+.login-button {
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  border: 0;
+  border-radius: 9px;
+  background: #e96f21;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.login-button span {
+  font-size: 20px;
+  transition: transform 0.2s ease;
+}
+
+.login-button:hover {
+  background: #d95f16;
+  box-shadow: 0 10px 24px rgba(217, 95, 22, 0.2);
+  transform: translateY(-1px);
+}
+
+.login-button:hover span {
+  transform: translateX(4px);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+/* ================================
+   DIVIDER
+   ================================ */
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 28px 0 22px;
+  color: #9a8e81;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: #ded3c4;
+}
+
+/* Google */
+
+.google-button {
+  width: 100%;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  border: 1px solid #d8cdbd;
+  border-radius: 9px;
+  background: #fffaf0;
+  color: #3f352e;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.google-button:hover {
+  background: #ffffff;
+  border-color: #c9bba7;
+  transform: translateY(-1px);
+}
+
+.google-icon {
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* Signup */
+
+.signup-text {
+  margin: 27px 0 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  color: #776c62;
+}
+
+.signup-text button {
+  margin-left: 5px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #d96825;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.signup-text button:hover {
+  text-decoration: underline;
+}
+
+.login-terms {
+  margin: 28px auto 0;
+  max-width: 350px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  line-height: 1.6;
+  color: #a1978d;
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+
+@media (max-width: 900px) {
+  .login-page {
+    grid-template-columns: 1fr;
+  }
+
+  .login-visual {
+    display: none;
+  }
+
+  .login-form-section {
+    min-height: 100vh;
+    padding: 35px 25px;
+  }
+
+  .mobile-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 55px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  .mobile-brand .login-logo {
+    width: 38px;
+    height: 38px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-form-section {
+    padding: 28px 18px;
+  }
+
+  .mobile-brand {
+    margin-bottom: 42px;
+  }
+
+  .login-heading h2 {
+    font-size: 40px;
+  }
+
+  .login-heading {
+    margin-bottom: 29px;
+  }
+} 
+
+.login-message {
+  margin-bottom: 20px;
+  padding: 13px 15px;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.login-message.error {
+  background: #fff0eb;
+  border: 1px solid #f2c4b2;
+  color: #a94825;
+}
+
+.login-message.success {
+  background: #edf7ed;
+  border: 1px solid #bfd9bf;
+  color: #39703d;
+} 

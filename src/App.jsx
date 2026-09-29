@@ -15,28 +15,22 @@ import Stories from './pages/stories/Stories.jsx'
 import HeritageMap from './pages/heritagemap/HeritageMap.jsx'
 import ToyMaker from './pages/toymaker/ToyMaker.jsx'
 import ExploreHeritage from './pages/explore/ExploreHeritage.jsx' 
-import Login from './pages/Login.jsx'  
-import Register from "./pages/Register.jsx"; 
-
-
-
+// import Login from './pages/Login.jsx'  
+// import Register from "./pages/Register.jsx"; 
 
 const COMING_SOON = [
 
 ]
 
 export default function App() { 
-  const location = useLocation() 
-  const isAuthPage = location.pathname === '/login' || location.pathname === '/register'
-  
   return (
     <>
       <LoadingScreen />
-      {!isAuthPage && <Navigation />} 
+      <Navigation /> 
       <main>
         <Routes> 
+          <Route path="/" element={<Home />} /> 
           <Route path="/start" element={<Home />} /> 
-          <Route path="/" element={<Navigate to="/login" replace />} /> 
           <Route path="/detective" element={<Detective />} />
           <Route path="/detective/:caseId" element={<CaseStudy />} />
           <Route path="/detective/:caseId/reconstruct" element={<ReconstructionBuilder />} />
@@ -47,8 +41,9 @@ export default function App() {
           <Route path="/map" element={<HeritageMap />} />
           <Route path="/toy-maker" element={<ToyMaker />} />
           <Route path="/explore" element={<ExploreHeritage />} /> 
-          <Route path="/login" element={<Login />} /> 
-          <Route path="/register" element={<Register />} /> 
+          {/* Auth pages disabled for now */}
+          <Route path="/login" element={<Navigate to="/" replace />} /> 
+          <Route path="/register" element={<Navigate to="/" replace />} /> 
           {COMING_SOON.map((route) => (
             <Route
               key={route.path}
@@ -58,7 +53,7 @@ export default function App() {
           ))}
         </Routes>
       </main>
-      {!isAuthPage && <Footer />}
+      <Footer />
       <ScrollToTop />
     </>
   )

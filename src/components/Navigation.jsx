@@ -71,6 +71,10 @@ export default function Navigation() {
         </nav>
 
         <div className="nav__actions">
+          <NavLink to="/login" className="nav__signin" onClick={() => setOpen(false)}>
+            Sign In
+          </NavLink>
+
           <button
             type="button"
             className="nav__theme"
@@ -114,6 +118,9 @@ export default function Navigation() {
             {item.label}
           </NavLink>
         ))}
+        <NavLink to="/login" className="nav__signin nav__signin--mobile" onClick={() => setOpen(false)}>
+          Sign In
+        </NavLink>
       </nav>
     </header>
   )

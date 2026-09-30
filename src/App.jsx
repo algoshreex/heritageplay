@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom' 
+import {BrowserRouter, Routes, Route, useLocation } from 'react-router-dom' 
 import Navigation from './components/Navigation.jsx'
 import Footer from './components/Footer.jsx'
 import LoadingScreen from './components/LoadingScreen.jsx'
@@ -15,8 +15,8 @@ import Stories from './pages/stories/Stories.jsx'
 import HeritageMap from './pages/heritagemap/HeritageMap.jsx'
 import ToyMaker from './pages/toymaker/ToyMaker.jsx'
 import ExploreHeritage from './pages/explore/ExploreHeritage.jsx' 
-// import Login from './pages/Login.jsx'  
-// import Register from "./pages/Register.jsx"; 
+import Login from './pages/Login.jsx'  
+import Register from "./pages/Register.jsx"; 
 
 const COMING_SOON = [
 
@@ -41,9 +41,8 @@ export default function App() {
           <Route path="/map" element={<HeritageMap />} />
           <Route path="/toy-maker" element={<ToyMaker />} />
           <Route path="/explore" element={<ExploreHeritage />} /> 
-          {/* Auth pages disabled for now */}
-          <Route path="/login" element={<Navigate to="/" replace />} /> 
-          <Route path="/register" element={<Navigate to="/" replace />} /> 
+          <Route path="/login" element={<Login />} /> 
+          <Route path="/register" element={<Register />} /> 
           {COMING_SOON.map((route) => (
             <Route
               key={route.path}

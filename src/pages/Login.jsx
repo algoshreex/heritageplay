@@ -1,49 +1,47 @@
-import { supabase } from "../lib/supabaseClient"; 
 import React, { useState } from "react";
 import "./Login.css"; 
 import { useNavigate } from "react-router-dom"; 
+import { signIn } from "../lib/authService";
 
 export default function Login() { 
   const navigate = useNavigate(); 
   const [showPassword, setShowPassword] = useState(false);
-const [message, setMessage] = useState("");
-const [messageType, setMessageType] = useState(""); 
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState(""); 
 
-  const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const email = e.target.email.value.trim();
-  const password = e.target.password.value;
+    const email = e.target.email.value.trim();
+    const password = e.target.password.value;
 
-  setMessage("");
+    setMessage("");
 
-  if (!email || !password) {
-    setMessageType("error");
-    setMessage("Please enter your email and password.");
-    return;
-  }
+    if (!email || !password) {
+      setMessageType("error");
+      setMessage("Please enter your email and password.");
+      return;
+    }
 
-  if (password.length < 6) {
-    setMessageType("error");
-    setMessage("Password must be at least 6 characters long.");
-    return;
-  }
+    if (password.length < 6) {
+      setMessageType("error");
+      setMessage("Password must be at least 6 characters long.");
+      return;
+    }
 
-  const { error } = await supabase.auth.signInWithPassword({
-    email,
-    password,
-  });
+    const { error } = signIn({ email, password });
 
-  if (error) {
-    setMessageType("error");
-    setMessage(error.message);
-    return;
-  }
+    if (error) {
+      setMessageType("error");
+      setMessage(error.message);
+      return;
+    }
 
-  setMessageType("success");
-  setMessage("Login successful! Welcome back.");
-  setTimeout(() => navigate("/start"), 1000);
-}; 
+    setMessageType("success");
+    setMessage("Login successful! Welcome back.");
+    setTimeout(() => navigate("/start"), 1000);
+  }; 
+
   return (
     <div className="login-page">
       <div className="login-visual">
@@ -95,10 +93,10 @@ const [messageType, setMessageType] = useState("");
 
           <form onSubmit={handleSubmit}> 
             {message && (
-  <div className={`login-message ${messageType}`}>
-    {message}
-  </div>
-)} 
+              <div className={`login-message ${messageType}`}>
+                {message}
+              </div>
+            )} 
 
             <div className="form-group">
               <label htmlFor="email">Email address</label>
@@ -161,35 +159,11 @@ const [messageType, setMessageType] = useState("");
 
           </form>
 
-          <div className="login-divider">
-            <span>or continue with</span>
-          </div>
-
-          <button
-            type="button"
-            className="google-button"
-            onClick={async () => {
-              const { error } = await supabase.auth.signInWithOAuth({
-                provider: 'google',
-                options: {
-                  redirectTo: window.location.origin + '/start',
-                },
-              });
-              if (error) {
-                setMessageType("error");
-                setMessage(error.message);
-              }
-            }}
-          >
-            <span className="google-icon">G</span>
-            Continue with Google
-          </button>
-
           <p className="signup-text">
             Don't have an account?
             <button onClick={() => navigate("/register")}>
-  Create one
-</button> 
+              Create one
+            </button> 
           </p>
 
           <p className="login-terms">

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "../lib/supabaseClient";
+import { signUp } from "../lib/authService";
 import "./Register.css";
 
 function Register() {
@@ -12,7 +12,7 @@ function Register() {
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const name = e.target.name.value.trim();
@@ -40,15 +40,7 @@ function Register() {
       return;
     }
 
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        data: {
-          full_name: name,
-        },
-      },
-    });
+    const { error } = signUp({ email, password, fullName: name });
 
     if (error) {
       setMessageType("error");
@@ -58,8 +50,9 @@ function Register() {
 
     setMessageType("success");
     setMessage(
-      "Account created successfully! Check your email to verify your account."
+      "Account created successfully! You can now sign in."
     );
+    setTimeout(() => navigate("/login"), 1500);
   };
 
   return (
@@ -188,30 +181,6 @@ function Register() {
             </button>
 
           </form>
-
-          <div className="register-divider">
-            <span>or continue with</span>
-          </div>
-
-          <button
-            type="button"
-            className="google-button"
-            onClick={async () => {
-              const { error } = await supabase.auth.signInWithOAuth({
-                provider: 'google',
-                options: {
-                  redirectTo: window.location.origin + '/start',
-                },
-              });
-              if (error) {
-                setMessageType("error");
-                setMessage(error.message);
-              }
-            }}
-          >
-            <span className="google-icon">G</span>
-            Continue with Google
-          </button>
 
           <div className="login-link">
             Already have an account?
